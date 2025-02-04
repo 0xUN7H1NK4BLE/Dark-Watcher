@@ -1,0 +1,46 @@
+
+These are the open ports of different subdomains of threatnix.io:
+www.threatnix.io:8443
+www.threatnix.io:8080
+www.threatnix.io:443
+www.threatnix.io:80
+threatnix.io:443
+threatnix.io:8443
+threatnix.io:80
+threatnix.io:8080
+asm-demo.threatnix.io:8080
+asm-demo.threatnix.io:8443
+asm-demo.threatnix.io:80
+asm-demo.threatnix.io:443
+
+
+The technologies used by these subdomains are:
+{
+    "asm-demo.threatnix.io": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "threatnix.io": [
+        "Cloudflare",
+        "HSTS",
+        "HTTP/3"
+    ],
+    "www.threatnix.io": [
+        "Cloudflare",
+        "HSTS",
+        "HTTP/3"
+    ]
+}
+
+These domains resolve to these IP addresses:
+asm-demo.threatnix.io:104.21.32.1
+threatnix.io:104.21.32.1
+www.threatnix.io:104.21.32.1
+
+
+This is the result of past hack data of the domain:
+No breach found for threatnix.io
+
+this is the result of secutity headers used or not used by the domain:
+{'domain': 'threatnix.io', 'headers': {'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Content-Security-Policy': 'Missing', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': 'Missing', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Permissions-Policy': 'Missing'}, 'rating': '60.00%', 'grade': 'C'}
+

@@ -1,0 +1,7 @@
+asm-demo.threatnix.io
+mx.threatnix.io
+qrapp.threatnix.io
+qr.threatnix.io
+scan.threatnix.io
+threatnix.io
+www.threatnix.io

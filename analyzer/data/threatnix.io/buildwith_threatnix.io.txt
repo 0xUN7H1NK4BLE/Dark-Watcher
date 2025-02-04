@@ -1,0 +1,16 @@
+{
+    "asm-demo.threatnix.io": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "threatnix.io": [
+        "Cloudflare",
+        "HSTS",
+        "HTTP/3"
+    ],
+    "www.threatnix.io": [
+        "Cloudflare",
+        "HSTS",
+        "HTTP/3"
+    ]
+}

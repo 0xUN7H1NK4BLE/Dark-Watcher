@@ -1,0 +1,324 @@
+
+These are the open ports of different subdomains of schoolworkspro.com:
+api.schoolworkspro.com:443
+api.schoolworkspro.com:8080
+api.schoolworkspro.com:8443
+api.schoolworkspro.com:80
+call.schoolworkspro.com:443
+call.schoolworkspro.com:8080
+call.schoolworkspro.com:8443
+call.schoolworkspro.com:80
+chat.superadmin.schoolworkspro.com:443
+chat.superadmin.schoolworkspro.com:8080
+chat.superadmin.schoolworkspro.com:8443
+chat.superadmin.schoolworkspro.com:80
+chat.teacher.schoolworkspro.com:443
+chat.teacher.schoolworkspro.com:8080
+chat.teacher.schoolworkspro.com:8443
+chat.teacher.schoolworkspro.com:80
+code.schoolworkspro.com:443
+code.schoolworkspro.com:8080
+code.schoolworkspro.com:8443
+code.schoolworkspro.com:80
+employer.schoolworkspro.com:443
+employer.schoolworkspro.com:8080
+employer.schoolworkspro.com:8443
+employer.schoolworkspro.com:80
+metrics.schoolworkspro.com:443
+metrics.schoolworkspro.com:8080
+metrics.schoolworkspro.com:8443
+metrics.schoolworkspro.com:80
+msoid.schoolworkspro.com:443
+msoid.schoolworkspro.com:8080
+msoid.schoolworkspro.com:8443
+msoid.schoolworkspro.com:80
+server.schoolworkspro.com:443
+server.schoolworkspro.com:8080
+server.schoolworkspro.com:8443
+server.schoolworkspro.com:80
+admin.schoolworkspro.com:80
+admin.schoolworkspro.com:8080
+admin.schoolworkspro.com:443
+admin.schoolworkspro.com:8443
+apiv2.schoolworkspro.com:80
+apiv2.schoolworkspro.com:8080
+apiv2.schoolworkspro.com:443
+apiv2.schoolworkspro.com:8443
+autodiscover.schoolworkspro.com:80
+autodiscover.schoolworkspro.com:8080
+autodiscover.schoolworkspro.com:443
+autodiscover.schoolworkspro.com:8443
+bktscl.accounting.schoolworkspro.com:80
+bktscl.accounting.schoolworkspro.com:8080
+bktscl.accounting.schoolworkspro.com:443
+bktscl.accounting.schoolworkspro.com:8443
+challenge.schoolworkspro.com:80
+challenge.schoolworkspro.com:8080
+challenge.schoolworkspro.com:443
+challenge.schoolworkspro.com:8443
+chat.schoolworkspro.com:80
+chat.schoolworkspro.com:8080
+chat.schoolworkspro.com:443
+chat.schoolworkspro.com:8443
+client.test-enrollee.schoolworkspro.com:80
+client.test-enrollee.schoolworkspro.com:8080
+client.test-enrollee.schoolworkspro.com:443
+client.test-enrollee.schoolworkspro.com:8443
+cms.schoolworkspro.com:80
+cms.schoolworkspro.com:8080
+cms.schoolworkspro.com:443
+cms.schoolworkspro.com:8443
+digitechnology.accounting.schoolworkspro.com:80
+digitechnology.accounting.schoolworkspro.com:8080
+digitechnology.accounting.schoolworkspro.com:443
+digitechnology.accounting.schoolworkspro.com:8443
+email.schoolworkspro.com:80
+email.schoolworkspro.com:8080
+email.schoolworkspro.com:443
+email.schoolworkspro.com:8443
+enrollee.softwarica.schoolworkspro.com:80
+enrollee.softwarica.schoolworkspro.com:8080
+enrollee.softwarica.schoolworkspro.com:443
+enrollee.softwarica.schoolworkspro.com:8443
+exam.schoolworkspro.com:80
+exam.schoolworkspro.com:8080
+exam.schoolworkspro.com:443
+exam.schoolworkspro.com:8443
+file.schoolworkspro.com:80
+file.schoolworkspro.com:8080
+file.schoolworkspro.com:443
+file.schoolworkspro.com:8443
+job.schoolworkspro.com:80
+job.schoolworkspro.com:8080
+job.schoolworkspro.com:443
+job.schoolworkspro.com:8443
+lyncdiscover.schoolworkspro.com:80
+lyncdiscover.schoolworkspro.com:8080
+lyncdiscover.schoolworkspro.com:443
+lyncdiscover.schoolworkspro.com:8443
+plagiarism.schoolworkspro.com:80
+plagiarism.schoolworkspro.com:8080
+plagiarism.schoolworkspro.com:443
+plagiarism.schoolworkspro.com:8443
+smartcity.schoolworkspro.com:80
+smartcity.schoolworkspro.com:8080
+smartcity.schoolworkspro.com:443
+smartcity.schoolworkspro.com:8443
+swpadm.schoolworkspro.com:80
+swpadm.schoolworkspro.com:8080
+swpadm.schoolworkspro.com:443
+swpadm.schoolworkspro.com:8443
+www.schoolworkspro.com:80
+www.schoolworkspro.com:8080
+www.schoolworkspro.com:443
+www.schoolworkspro.com:8443
+
+
+The technologies used by these subdomains are:
+{
+    "plagiarism.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "job.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "cms.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "server.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "employer.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "swpadm.schoolworkspro.com": [
+        "Cloudflare",
+        "Express",
+        "HTTP/3",
+        "Node.js"
+    ],
+    "schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "call.schoolworkspro.com": [
+        "Cloudflare",
+        "HSTS",
+        "HTTP/3"
+    ],
+    "challenge.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "www.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "file.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "apiv2.schoolworkspro.com": [
+        "Cloudflare",
+        "Express",
+        "HTTP/3",
+        "Node.js"
+    ],
+    "chat.teacher.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "client.test-enrollee.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "exam.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "api.schoolworkspro.com": [
+        "Cloudflare",
+        "Express",
+        "HTTP/3",
+        "Node.js"
+    ],
+    "chat.superadmin.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "chat.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "admin.schoolworkspro.com": [
+        "Bootstrap",
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "bktscl.accounting.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "code.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "enrollee.softwarica.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "metrics.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "smartcity.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "digitechnology.accounting.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "email.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "msoid.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "lyncdiscover.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "autodiscover.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3",
+        "Microsoft ASP.NET"
+    ]
+}
+
+These domains resolve to these IP addresses:
+plagiarism.schoolworkspro.com:172.67.168.207
+job.schoolworkspro.com:172.67.168.207
+cms.schoolworkspro.com:104.21.46.176
+server.schoolworkspro.com:104.21.46.176
+employer.schoolworkspro.com:104.21.46.176
+swpadm.schoolworkspro.com:104.21.46.176
+schoolworkspro.com:172.67.168.207
+call.schoolworkspro.com:172.67.168.207
+challenge.schoolworkspro.com:104.21.46.176
+www.schoolworkspro.com:104.21.46.176
+file.schoolworkspro.com:104.21.46.176
+apiv2.schoolworkspro.com:172.67.168.207
+chat.teacher.schoolworkspro.com:104.21.46.176
+client.test-enrollee.schoolworkspro.com:172.67.168.207
+exam.schoolworkspro.com:172.67.168.207
+api.schoolworkspro.com:104.21.46.176
+chat.superadmin.schoolworkspro.com:104.21.46.176
+chat.schoolworkspro.com:104.21.46.176
+admin.schoolworkspro.com:172.67.168.207
+bktscl.accounting.schoolworkspro.com:172.67.168.207
+code.schoolworkspro.com:104.21.46.176
+enrollee.softwarica.schoolworkspro.com:104.21.46.176
+metrics.schoolworkspro.com:172.67.168.207
+smartcity.schoolworkspro.com:172.67.168.207
+digitechnology.accounting.schoolworkspro.com:172.67.168.207
+challenge.schoolworkspro.com:104.21.46.176
+server.schoolworkspro.com:104.21.46.176
+bktscl.accounting.schoolworkspro.com:104.21.46.176
+chat.superadmin.schoolworkspro.com:172.67.168.207
+exam.schoolworkspro.com:104.21.46.176
+plagiarism.schoolworkspro.com:172.67.168.207
+chat.teacher.schoolworkspro.com:104.21.46.176
+smartcity.schoolworkspro.com:104.21.46.176
+schoolworkspro.com:172.67.168.207
+cms.schoolworkspro.com:172.67.168.207
+email.schoolworkspro.com:104.21.46.176
+api.schoolworkspro.com:104.21.46.176
+digitechnology.accounting.schoolworkspro.com:104.21.46.176
+enrollee.softwarica.schoolworkspro.com:172.67.168.207
+msoid.schoolworkspro.com:104.21.46.176
+lyncdiscover.schoolworkspro.com:172.67.168.207
+apiv2.schoolworkspro.com:172.67.168.207
+metrics.schoolworkspro.com:104.21.46.176
+swpadm.schoolworkspro.com:172.67.168.207
+www.schoolworkspro.com:172.67.168.207
+call.schoolworkspro.com:172.67.168.207
+chat.schoolworkspro.com:104.21.46.176
+client.test-enrollee.schoolworkspro.com:172.67.168.207
+code.schoolworkspro.com:172.67.168.207
+employer.schoolworkspro.com:104.21.46.176
+admin.schoolworkspro.com:104.21.46.176
+file.schoolworkspro.com:104.21.46.176
+job.schoolworkspro.com:172.67.168.207
+autodiscover.schoolworkspro.com:104.21.46.176
+
+
+This is the result of past hack data of the domain:
+schoolworkspro.com: 1531 breaches
+From 2022-07-28 to 2025-01-06
+Countries with the most breaches:
+NP, BD, US
+
+www.schoolworkspro.com: 88 breaches
+From 2024-03-31 to 2024-12-11
+Countries with the most breaches:
+NP
+
+exam.schoolworkspro.com: 58 breaches
+From 2024-02-22 to 2024-12-11
+Countries with the most breaches:
+NP
+
+admin.schoolworkspro.com: 43 breaches
+From 2022-09-23 to 2024-12-06
+Countries with the most breaches:
+NP
+
+

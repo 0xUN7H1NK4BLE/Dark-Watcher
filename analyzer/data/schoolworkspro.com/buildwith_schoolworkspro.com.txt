@@ -1,0 +1,127 @@
+{
+    "plagiarism.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "job.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "cms.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "server.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "employer.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "swpadm.schoolworkspro.com": [
+        "Cloudflare",
+        "Express",
+        "HTTP/3",
+        "Node.js"
+    ],
+    "schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "call.schoolworkspro.com": [
+        "Cloudflare",
+        "HSTS",
+        "HTTP/3"
+    ],
+    "challenge.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "www.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "file.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "apiv2.schoolworkspro.com": [
+        "Cloudflare",
+        "Express",
+        "HTTP/3",
+        "Node.js"
+    ],
+    "chat.teacher.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "client.test-enrollee.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "exam.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "api.schoolworkspro.com": [
+        "Cloudflare",
+        "Express",
+        "HTTP/3",
+        "Node.js"
+    ],
+    "chat.superadmin.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "chat.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "admin.schoolworkspro.com": [
+        "Bootstrap",
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "bktscl.accounting.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "code.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "enrollee.softwarica.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "metrics.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "smartcity.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "digitechnology.accounting.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "email.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "msoid.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "lyncdiscover.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3"
+    ],
+    "autodiscover.schoolworkspro.com": [
+        "Cloudflare",
+        "HTTP/3",
+        "Microsoft ASP.NET"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "domain": "schoolworkspro.com",
+    "headers": {
+        "Strict-Transport-Security": "Missing",
+        "Content-Security-Policy": "Missing",
+        "X-Content-Type-Options": "Missing",
+        "X-Frame-Options": "Missing",
+        "X-XSS-Protection": "Missing",
+        "Referrer-Policy": "Missing",
+        "Permissions-Policy": "Missing"
+    },
+    "rating": "0.00%",
+    "grade": "F"
+}

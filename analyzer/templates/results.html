@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results for {{ domain }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1, h2 {
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .horizontal-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .horizontal-section .section {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        table {
+            text-align: left;
+        }
+
+        .list-group-item {
+            font-size: 16px;
+        }
+
+        .ai-analysis {
+            background-color: #ffffff;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Full-Screen Preview Styling */
+        #chart-preview {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        #chart-preview .content {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            margin: 5% auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #chart-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        /* Card and Analysis Styling */
+        .ai-analysis {
+            margin-top: 0px;
+        }
+
+        .card {
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card .badge {
+            font-size: 1.3rem;
+            padding: 10px 20px;
+        }
+
+        .list-group-item {
+            font-size: 1rem;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .list-group-item span {
+            font-size: 1.2rem;
+            color: #f1f4f7;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .ai-analysis .container {
+                padding: 15px;
+            }
+
+            .ai-analysis .card {
+                margin-bottom: 20px;
+            }
+
+            .horizontal-section {
+                flex-direction: column;
+            }
+
+            .horizontal-section .section {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* styles for header */
+        .grade-box {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            color: #000000;
+            border-radius: 10px;
+        }
+        .grade-box.C { background-color: #ff6f61; }
+        .grade-box.B { background-color: #ffc107; }
+        .grade-box.A { background-color: #4caf50; }
+        .headers li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .headers .badge-success { background-color: #4caf50; color: white; }
+        .headers .badge-danger { background-color: #f44336; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Analysis Results for <span class="text-warning">{{ domain }}</span></h1>
+        </div>
+
+        <!-- Horizontal Section: Subdomain Chart and Ports Chart -->
+        <div class="horizontal-section my-4">
+            <div class="section">
+                <h2>Subdomain Breaches</h2>
+                <!-- Chart Container -->
+                <div id="chart-container">
+                    <!-- Embed iframe for Subdomain Breaches -->
+                    <iframe 
+                        id="subdomain-chart"
+                        src="{{ url_for('static', filename=subdomain_chart) }}" 
+                        width="100%" height="300px" frameborder="0">
+                    </iframe>
+                </div>
+                <!-- Preview Button -->
+                <button id="preview-btn" class="btn btn-primary">Preview Chart</button>
+            </div>
+
+            <div class="section">
+                <h2>Open Ports</h2>
+                <iframe src="{{ url_for('static', filename=ports_chart) }}" width="100%" height="300px"></iframe>
+            </div>
+        </div>
+
+        <!-- Full-Screen Chart Preview -->
+        <div id="chart-preview">
+            <div class="content">
+                <!-- Close Button -->
+                <button id="close-btn" class="btn btn-danger">Close</button>
+                <!-- Full-Screen Preview -->
+                <iframe id="subdomain-chart-full" src="{{ url_for('static', filename=subdomain_chart) }}"></iframe>
+            </div>
+        </div>
+
+        <!-- Hacked List Section -->
+        <div class="section">
+            <h2>Hacked List</h2>
+            {% if hackedlist.compromised == false %}
+                <div class="alert alert-info">
+                    <strong>No breaches found</strong>
+                </div>
+            {% else %}
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Subdomain</th>
+                            <th>Breaches</th>
+                            <th>Index Time Range</th>
+                            <th>Countries (Code: Count)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sub in hackedlist.subdomains %}
+                        <tr>
+                            <td>{{ sub.subdomain }}</td>
+                            <td>{{ sub.count }}</td>
+                            <td>From {{ sub.index_time.min | timestamp_to_date }} to {{ sub.index_time.max | timestamp_to_date }}</td>
+                            <td>
+                                {% for country in sub.countries %}
+                                {{ country.code }}: {{ country.count }}<br>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+
+
+        <!-- Security Headers and Grade Section -->
+        <div class="section">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="grade-box" 
+                                style="
+                                    background-color: 
+                                        {% if data.grade.startswith('A') %} #4caf50; /* Green */
+                                        {% elif data.grade.startswith('B') %} #ffc107; /* Yellow */
+                                        {% elif data.grade.startswith('C') %} #f44336; /* Red */
+                                        {% else %} #6c757d; /* Gray for unknown grades */
+                                        {% endif %}
+                                    color: white;">
+                                {{ data.grade }}
+                            </div>
+                        <div class="ms-4">
+                            <h3 class="card-title">Security Report Summary</h3>
+                            <p class="mb-1"><strong>Site:</strong> <a href="{{ data.domain }}" target="_blank">{{ data.domain }}</a></p>
+                            <p class="mb-1"><strong>Rating:</strong> {{ data.rating }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Headers:</h5>
+                        <ul class="list-unstyled headers">
+                            {% for header, value in data.headers.items() %}
+                            <li class="d-flex justify-content-between">
+                                <span>{{ header }}</span>
+                                <span class="badge {{ 'badge-success' if value != 'Missing' else 'badge-danger' }}">
+                                    {{ value if value != 'Missing' else '✘ Missing' }}
+                                </span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
+        
+
+        
+
+        <!-- Horizontal Section: Technologies Used and AI Analysis -->
+        <div class="horizontal-section">
+            <div class="section">
+                <h2>Technologies Used</h2>
+                <ul class="list-group">
+                    {% for subdomain, techs in domain_data.items() %}
+                    <li class="list-group-item">
+                        <strong>{{ subdomain }}</strong>: {{ techs | join(', ') }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="section ai-analysis">
+                <h2 class="text-center mb-4">AI Analysis Results</h2>
+                <div class="card shadow-lg border-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Vulnerability Index</h5>
+                        <div class="text-center mb-4">
+                            <span class="badge rounded-pill bg-danger" style="font-size: 1.5rem;">
+                                {{ result.vulnerability_index }}
+                            </span>
+                        </div>
+                        <h6 class="text-center mb-3">Analysis Reasons</h6>
+                        <ul class="list-group">
+                            {% for reason in result.reasons %}
+                                <li class="list-group-item">
+                                    <span class="text-muted">•</span> {{ reason }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <h6 class="text-center mt-4 mb-3">Recommendations</h6>
+                        <ul class="list-group">
+                            {% for recommendation in result.recommendations %}
+                                <li class="list-group-item">
+                                    <span class="text-muted">•</span> {{ recommendation }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="footer">
+            &copy; 2025 Your Organization. All Rights Reserved.
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const previewBtn = document.getElementById('preview-btn');
+            const chartPreview = document.getElementById('chart-preview');
+            const closeBtn = document.getElementById('close-btn');
+
+            // Show the full-screen preview of the chart on button click
+            previewBtn.addEventListener('click', () => {
+                chartPreview.style.display = 'block';
+            });
+
+            // Close the full-screen preview when clicking the close button
+            closeBtn.addEventListener('click', () => {
+                chartPreview.style.display = 'none';
+            });
+
+            // Close the full-screen preview when clicking outside the iframe
+            chartPreview.addEventListener('click', (e) => {
+                if (e.target === chartPreview) {
+                    chartPreview.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
