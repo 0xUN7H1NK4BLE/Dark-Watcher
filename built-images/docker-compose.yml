@@ -1,0 +1,129 @@
+#Containers' name can't contain _ (underscore) because scrapy is not able to handle it.
+version: '3.2'
+
+services:
+  
+  elasticsearch1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
+    restart: always
+    environment:
+     - cluster.name=docker-cluster
+     - node.name=elasticsearch1
+     - "ES_JAVA_OPTS=-Xmx1g -Xms1g"
+     - discovery.seed_hosts=elasticselasticsearch1earch1,elasticsearch2
+     - cluster.initial_master_nodes=elasticsearch1,elasticsearch2
+     - indices.query.bool.max_clause_count=10240
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch1-data:/usr/share/elasticsearch/data
+      - ./elk-certs:$ELK_CERTS_DIR
+    ports:
+      - "127.0.0.1:9201:9200"
+    container_name: "darkweb-search-engine-elasticsearch1"
+
+  elasticsearch2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
+    restart: always
+    environment:
+     - cluster.name=docker-cluster
+     - node.name=elasticsearch2
+     - "ES_JAVA_OPTS=-Xmx1g -Xms1g"
+     - discovery.seed_hosts=elasticsearch1,elasticsearch2
+     - cluster.initial_master_nodes=elasticsearch1,elasticsearch2
+     - indices.query.bool.max_clause_count=10240
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch2-data:/usr/share/elasticsearch/data
+      - ./elk-certs:$ELK_CERTS_DIR
+    # ports:
+    #   - "127.0.0.1:9201:9200"
+    container_name: "darkweb-search-engine-elasticsearch2"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:${ELK_VERSION}
+    restart: always
+    environment:
+     - ELASTICSEARCH_URL=http://elasticsearch1:9200
+     - ELASTICSEARCH_HOSTS=http://elasticsearch1:9200
+     - NODE_OPTIONS="--max-old-space-size=8192"  
+     - elasticsearch.requestTimeout=300000 
+     - elasticsearch.startupTimeout=500000
+    volumes:
+      - ./elk-certs:$ELK_CERTS_DIR
+    ports:
+      - "127.0.0.1:5602:5601"
+    container_name: "darkweb-search-engine-kibana"
+
+  db:
+    image: 0xun7h1nk4ble/darkweb-search-engine-db
+    restart: always
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - ./data/mysqldb:/var/lib/mysql:rw
+    container_name: "darkweb-search-engine-db"
+
+  tor-privoxy0:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy0"
+  tor-privoxy1:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy1" 
+  tor-privoxy2:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy2"
+  tor-privoxy3:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy3"
+  tor-privoxy4:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy4"
+  tor-privoxy5:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy5"
+  tor-privoxy6:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy6"
+  tor-privoxy7:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy7"
+  tor-privoxy8:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy8"
+  tor-privoxy9:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy0
+    container_name: "darkweb-search-engine-tor-privoxy9"   
+    
+  tor-privoxy-web:
+    restart: always
+    image: 0xun7h1nk4ble/darkweb-search-engine-tor-privoxy-web
+    ports:
+      - "3100:8100" # Privoxy
+    container_name: "darkweb-search-engine-tor-privoxy-web"
+
+volumes:
+  elasticsearch1-data:
+  elasticsearch2-data:
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.57.0/24
