@@ -51,7 +51,7 @@ docker-compose up -d
 
 ### **2. Run the Dark Web Scraper**  
 ```bash
-docker run -d --name darkweb-search-engine-onion-crawler --cpus="0.5" --restart=always --network=built-images_default dapperblondie/scraper_crawler_complete /opt/torscraper/scripts/start_onion_scrapy.sh
+docker run -d --name darkweb-search-engine-onion-crawler --cpus="0.5" --restart=always --network=built-images_default 0xun7h1nk4ble/scraper_crawler_complete /opt/torscraper/scripts/start_onion_scrapy.sh
 ```
 
 ### **3. Migrate Elasticsearch Data**  
