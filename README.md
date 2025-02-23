@@ -30,9 +30,6 @@ This component is responsible for crawling the dark web, extracting data from hi
 #### **Kibana**
 - Runs on port **5601** and provides a user-friendly dashboard to visualize and analyze the indexed data.
 
-#### **Web Interface**
-- Provides a domain search engine accessible via port **7000**.
-
 #### **MySQL Database**
 - Stores structured data such as domain details, page URLs, Bitcoin addresses, and metadata.
 
